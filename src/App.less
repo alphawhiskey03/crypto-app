@@ -1,10 +1,14 @@
+@import "~antd/dist/antd.less";
+
 :root {
   --text-primary: #000;
   --bgPrimary: #fff;
   --bgSecondary: #f9f9f9;
-  --pink: #0071bd;
+  --pink: #d2042d;
   --light-blue: #e6f7ff;
   --border: #d9d9d9;
+  --off-white: #fcfcfc;
+  --pizza: #ff2d2d;
 }
 
 * {
@@ -12,9 +16,37 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: white !important;
+}
+.ant-layout {
+  background-color: white !important  ;
+}
+.ant-spin-dot-item {
+  background-color: var(--pizza) !important;
+}
+.ant-spin-text {
+  color: var(--pizza) !important;
+}
+input[type="text"]:focus {
+  outline-color: var(--pizza) !important;
+  box-shadow: var(--pizza) !important;
+  border-color: var(--pizza) !important;
+}
+input[type="text"]:focus {
+  outline-color: var(--pizza) !important;
+  box-shadow: var(--pizza) !important;
+  border-color: var(--pizza) !important;
+}
+.nav-container {
+  background-color: var(--pizza) !important ;
+}
 
 a:hover {
   color: var(--pink) !important;
+}
+.ant-menu-title-content a:hover {
+  color: var(--bgPrimary) !important;
 }
 
 .app {
@@ -29,11 +61,13 @@ a:hover {
 
 .main {
   flex: 0.8;
-  width: 100%;
+  width: 85%;
+  overflow-x: hidden;
 }
 .routes {
   padding: 20px;
 }
+
 .nav-container {
   position: fixed;
   left: 0;
@@ -44,7 +78,7 @@ a:hover {
 }
 
 .logo-container {
-  background-color: #001529;
+  background-color: var(--pizza);
   display: flex;
   padding: 20px;
   align-items: center;
@@ -64,6 +98,34 @@ a:hover {
   font-size: 1.2rem !important;
   background-color: var(--bgSecondary) !important;
   border: none !important;
+}
+.ant-menu-item-selected {
+  background-color: var(--bgPrimary) !important;
+  color: var(--pizza) !important;
+}
+.ant-menu-item-selected a {
+  color: var(--pizza) !important;
+}
+.ant-menu-item-selected .ant-menu-item-icon {
+  color: var(--pizza) !important;
+}
+.ant-menu-item-icon {
+  color: var(--bgPrimary) !important;
+}
+.ant-menu {
+  background-color: var(--pizza) !important;
+}
+.ant-menu-item {
+  background-color: #ff2d2d;
+}
+.ant-typography a {
+  color: var(--bgPrimary) !important;
+}
+.ant-card {
+  background-color: var(--pizza) !important;
+}
+.ant-card-head-title {
+  color: var(--bgPrimary) !important;
 }
 
 .loader {
@@ -96,6 +158,9 @@ a:hover {
     flex-direction: column;
     overflow: hidden;
   }
+  .main {
+    width: 100%;
+  }
 
   .navbar {
     flex: 1;
@@ -111,6 +176,7 @@ a:hover {
   .nav-container {
     height: 8vh;
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 100;
     background-color: var(--bgSecondary);
@@ -149,7 +215,7 @@ a:hover {
 
 .coin-heading-container .coin-name {
   font-weight: 900;
-  color: var(--pink);
+  color: var(--pizza);
 }
 
 .coin-heading-container p {
@@ -175,7 +241,7 @@ a:hover {
 .coin-details-heading {
   font-weight: 700 !important;
   margin-top: 20px !important;
-  color: var(--pink) !important;
+  color: var(--pizza) !important;
 }
 
 .coin-stats {
@@ -250,7 +316,7 @@ a:hover {
 }
 
 .coin-link a {
-  color: var(--pink);
+  color: var(--pizza);
   font-weight: 700;
   font-size: 1rem;
 }
@@ -258,6 +324,26 @@ a:hover {
 .coin-link:hover,
 .coin-stats:hover {
   background-color: var(--bgSecondary);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 @media screen and (max-width: 1000px) {
@@ -298,6 +384,7 @@ a:hover {
 }
 .news-title {
   width: 70%;
+  color: var(--bgPrimary) !important;
 }
 
 .news-image-container .img {
@@ -323,7 +410,7 @@ a:hover {
   color: #0071bd;
 }
 .chart-title {
-  color: #0071bd !important;
+  color: var(--pizza) !important;
 }
 .price-container {
   display: flex !important;
@@ -347,12 +434,15 @@ a:hover {
 .show-more {
   margin-top: 0px !important;
 }
+.show-more a {
+  color: #888 !important;
+}
 .exchange-image {
   margin: 0px 10px !important;
 }
 .search-crypto {
   margin: 20px auto 30px auto;
-  width: 250px;
+  width: 500px;
 }
 .crypto-card-container {
   min-height: 65vh !important;
@@ -369,9 +459,13 @@ a:hover {
 }
 
 .footer {
-  background-color: #001529;
+  // background-color: #001529;
   display: flex;
   flex-direction: column;
   padding: 20px;
   align-items: center;
+}
+
+.footer a {
+  color: var(--pizza) !important;
 }

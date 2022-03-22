@@ -1,5 +1,4 @@
-import logo from "./logo.svg";
-import "./App.css";
+import "./App.less";
 import { Layout, Typography, Space } from "antd";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from "./component";
@@ -11,6 +10,8 @@ import {
   HomePage,
 } from "./pages";
 import { Link } from "react-router-dom";
+import NewChart from "./pages/newChart";
+
 function App() {
   return (
     <BrowserRouter>
@@ -27,16 +28,17 @@ function App() {
                   path="/cryptocurrencies"
                   element={<Cryptocurrencies />}
                 />
-                <Route path="/crypto/:crypto-id" element={<CryptoDetails />} />
+                <Route path="/crypto/:coinId" element={<CryptoDetails />} />
                 <Route path="/exchange" element={<Exchange />} />
                 <Route path="/news" element={<News />} />
+                <Route path="/charts" element={<NewChart />} />
               </Routes>
             </div>
           </Layout>
           <div className="footer">
             <Typography.Title
               level={5}
-              style={{ color: "white", textAlign: "center" }}
+              style={{ color: "#888", textAlign: "center" }}
             >
               Crypton
               <br />
