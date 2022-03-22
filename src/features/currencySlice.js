@@ -2,13 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const selectedCurrency = JSON.parse(localStorage.getItem("selectedCurrency"));
 
 const initialState = {
-  baseCurrencySym: selectedCurrency.baseCurrencySym
-    ? selectedCurrency.baseCurrencySym
-    : "USD",
+  baseCurrencySym: selectedCurrency ? selectedCurrency.baseCurrencySym : "USD",
 
-  baseCurrencyVal: selectedCurrency.baseCurrencySym
-    ? selectedCurrency.baseCurrencyVal
-    : 1,
+  baseCurrencyVal: selectedCurrency ? selectedCurrency.baseCurrencyVal : 1,
 };
 export const currencySlice = createSlice({
   name: "baseCurrency",
@@ -24,7 +20,6 @@ export const currencySlice = createSlice({
       );
       state.baseCurrencySym = action.payload.sym;
       state.baseCurrencyVal = action.payload.val;
-      console.log(state.baseCurrencySym);
     },
   },
 });

@@ -1,4 +1,4 @@
-import "./App.less";
+import "./App.css";
 import { Layout, Typography, Space } from "antd";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from "./component";
