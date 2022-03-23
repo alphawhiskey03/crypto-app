@@ -1,4 +1,5 @@
-### crypton
+# Crypton
+
 
 ## Overview
 This a react application which let's user to browse details about cryptocurriencies, latest cryptocurrency news and details on exchanges.
