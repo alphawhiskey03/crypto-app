@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-// console.log(process.env.REACT_APP_COIN_GECKO_HOST);
 const cryptoApiHeaders = {
   "x-rapidapi-host": process.env.REACT_APP_COINRANKING_HOST,
   "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
