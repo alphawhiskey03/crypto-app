@@ -34,9 +34,7 @@ const NavBar = () => {
     else setActiveMenu(true);
   }, [screenSize]);
   useEffect(() => {
-    console.log(echangeRates);
     if (echangeRatesList && echangeRatesList.hasOwnProperty("results")) {
-      console.log("iniside result");
       Object.entries(echangeRatesList?.results).forEach((key) => {
         setExchanges((exchange) => [...exchange, { sym: key[0], val: key[1] }]);
       });
