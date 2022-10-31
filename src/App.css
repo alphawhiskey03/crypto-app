@@ -138,6 +138,13 @@ a:hover {
     margin-left: 200px;
   }
 }
+@media screen and (min-width:1300px) 
+{
+  .main{
+    margin-left: 200px;
+  }
+  
+}
 
 @media screen and (max-width: 1170px) {
   .main {
