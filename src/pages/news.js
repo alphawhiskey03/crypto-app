@@ -1,15 +1,15 @@
-import react, { useState } from "react";
-import { useGetCryptoNewsQuery } from "../services/newsApi";
-import { Typography, Row, Col, Avatar, Card, Select } from "antd";
+import {useState} from "react";
+import {useGetCryptoNewsQuery} from "../services/newsApi";
+import {Typography, Row, Col, Avatar, Card, Select} from "antd";
 import moment from "moment";
-import { useGetCryptosQuery } from "../services/cryptoApi";
+import {useGetCryptosQuery} from "../services/cryptoApi";
 import Loader from "../component/loader";
 
-const News = ({ simplified }) => {
-  const { data } = useGetCryptosQuery(100);
+const News = ({simplified}) => {
+  const {data} = useGetCryptosQuery(100);
   const [newsCategory, setNewsCategory] = useState("cryptocurrency");
 
-  const { data: cryptoNews } = useGetCryptoNewsQuery({
+  const {data: cryptoNews} = useGetCryptoNewsQuery({
     newsCategory: newsCategory,
     count: simplified ? 6 : 12,
   });
@@ -18,8 +18,8 @@ const News = ({ simplified }) => {
     "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
 
   if (!cryptoNews?.value) return <Loader />;
-  const { Title, Text } = Typography;
-  const { Option } = Select;
+  const {Title, Text} = Typography;
+  const {Option} = Select;
   return (
     <>
       <Row gutter={[18, 18]} align="middle">
@@ -34,7 +34,7 @@ const News = ({ simplified }) => {
               filterOption={(input, option) =>
                 option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
-              style={{ width: "40vw" }}
+              style={{width: "40vw"}}
             >
               {data?.data?.coins.map((coin) => (
                 <Option key={coin.name} value={coin.name}>
@@ -46,7 +46,7 @@ const News = ({ simplified }) => {
         )}
         {cryptoNews.value.map((news, i) => (
           <Col xs={24} sm={12} lg={8} key={i}>
-            <Card hoverable className="news-card" style={{ borderRadius: 15 }}>
+            <Card hoverable className="news-card" style={{borderRadius: 15}}>
               <a href={news.url} target="_blank">
                 <div className="news-image-container">
                   <Title className="news-title" level={4}>
@@ -55,7 +55,7 @@ const News = ({ simplified }) => {
                   <img
                     src={news?.image?.thumbnail?.contentUrl || image}
                     alt="news"
-                    style={{ maxWidth: "200px", maxHeight: "100px" }}
+                    style={{maxWidth: "200px", maxHeight: "100px"}}
                   />
                 </div>
                 <p>
@@ -66,7 +66,7 @@ const News = ({ simplified }) => {
               </a>
 
               <div className="provider-cointainer">
-                <div style={{ paddingBottom: 5 }}>
+                <div style={{paddingBottom: 5}}>
                   <Avatar
                     src={
                       news.provider[0]?.image?.thumbnail?.contentUrl || image
@@ -78,7 +78,7 @@ const News = ({ simplified }) => {
                     {news.provider[0]?.name}
                   </Text>
                 </div>
-                <Text style={{ fontSize: 12, color: "white" }}>
+                <Text style={{fontSize: 12, color: "white"}}>
                   {moment(news.datePublished).startOf("ss").fromNow()}
                 </Text>
               </div>

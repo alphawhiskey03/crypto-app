@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import millify from "millify";
-import { Link } from "react-router-dom";
-import { Card, Row, Col, Input, Select, Option } from "antd";
-import { useGetCryptosQuery } from "../services/cryptoApi";
-import { useSelector } from "react-redux";
+import {Link} from "react-router-dom";
+import {Card, Row, Col, Input} from "antd";
+import {useGetCryptosQuery} from "../services/cryptoApi";
+import {useSelector} from "react-redux";
 import Loader from "../component/loader";
-const Cryptocurrencies = ({ simplified }) => {
+const Cryptocurrencies = ({simplified}) => {
   const count = simplified ? 10 : 100;
-  const { baseCurrencySym, baseCurrencyVal } = useSelector(
+  const {baseCurrencySym, baseCurrencyVal} = useSelector(
     (state) => state.baseCurrency
   );
-  const { data: cryptosList, isFetching: isFetchingCryptos } =
+  const {data: cryptosList, isFetching: isFetchingCryptos} =
     useGetCryptosQuery(count);
 
   const [cryptos, setCryptos] = useState(cryptosList?.data?.coins);
@@ -52,7 +52,7 @@ const Cryptocurrencies = ({ simplified }) => {
                   title={`${crypto.rank} . ${crypto.name}`}
                   extra={<img className="crypto-image" src={crypto.iconUrl} />}
                   hoverable
-                  style={{ borderRadius: 15 }}
+                  style={{borderRadius: 15}}
                 >
                   <p>
                     Price:

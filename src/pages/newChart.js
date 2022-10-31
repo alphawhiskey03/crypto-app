@@ -5,9 +5,7 @@ import {
   YAxis,
   Area,
   Tooltip,
-  CartesianGrid,
 } from "recharts";
-import { format, parseISO, subDays } from "date-fns";
 const NewChart = () => {
   const data = [
     {

@@ -1,4 +1,4 @@
-import { Spin, Alert } from "antd";
+import {Spin} from "antd";
 const Loader = () => {
   return (
     <div className="loader">
